@@ -33,13 +33,9 @@ export class P2Component {
 
 
   almacenaPuntaje() {
-      // console.log(this.cerveza, this.vino, this.destilado)
-//esta funcion va arriba, transitorio, en desarrollo
 this.sumaPuntajeService.setP2(
       this.convertirTragosService.convertir(
-        this.cerveza, this.vino, this.destilado)
-);
-    // this.sumaPuntajeService.setP2(this.model);
+        this.cerveza, this.vino, this.destilado));
     this.router.navigate(['auditc/p3'])
 
   }

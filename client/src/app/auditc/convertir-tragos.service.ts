@@ -22,9 +22,7 @@ convertir(cerveza: number, vino: number, destilado:number) {
   else
       {this.puntaje_p2 = 4}
 
-  console.log(this.puntaje_p2)
-
-  return this.tragos_estandar
+  return this.puntaje_p2
 }
 
 }
