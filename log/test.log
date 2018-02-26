@@ -1,0 +1,1944 @@
+  [1m[35m (209.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "audit3_test"[0m
+  [1m[35m (548.5ms)[0m  [1m[35mCREATE DATABASE "audit3_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (6.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "usuarios" CASCADE[0m
+  [1m[35m (15.7ms)[0m  [1m[35mCREATE TABLE "usuarios" ("id" bigserial primary key, "nombre" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_usuarios_on_nombre" ON "usuarios"  ("nombre")[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171122200850)[0m
+  [1m[35m (22.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "test"], ["created_at", "2017-11-22 20:13:54.621816"], ["updated_at", "2017-11-22 20:13:54.621816"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:18:10.058102"], ["updated_at", "2017-11-22 20:18:10.058102"]]
+  [1m[35m (0.8ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:19:24.021646"], ["updated_at", "2017-11-22 20:19:24.021646"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:19:44.089254"], ["updated_at", "2017-11-22 20:19:44.089254"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:19:55.503208"], ["updated_at", "2017-11-22 20:19:55.503208"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:20:46.218417"], ["updated_at", "2017-11-22 20:20:46.218417"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:22:39.717205"], ["updated_at", "2017-11-22 20:22:39.717205"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:22:39.723887"], ["updated_at", "2017-11-22 20:22:39.723887"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:23:11.075685"], ["updated_at", "2017-11-22 20:23:11.075685"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" IS NULL AND ("usuarios"."id" != $1) LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:23:11.087193"], ["updated_at", "2017-11-22 20:23:11.087193"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:10.354833"], ["updated_at", "2017-11-22 20:26:10.354833"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.64ms)
+Completed 200 OK in 20ms (Views: 19.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:10.381789"], ["updated_at", "2017-11-22 20:26:10.381789"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:10.399673"], ["updated_at", "2017-11-22 20:26:10.399673"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 201 Created in 4ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+  [1m[35m (5.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:10.413301"], ["updated_at", "2017-11-22 20:26:10.413301"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 201 Created in 4ms (Views: 0.7ms | ActiveRecord: 1.2ms)
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" ORDER BY "usuarios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:10.424679"], ["updated_at", "2017-11-22 20:26:10.424679"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:10.428500"], ["updated_at", "2017-11-22 20:26:10.428500"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}, "id"=>"15"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "MyString"], ["id", 15], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:10.436773"], ["updated_at", "2017-11-22 20:26:10.436773"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:10.440761"], ["updated_at", "2017-11-22 20:26:10.440761"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#destroy as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:10.449143"], ["updated_at", "2017-11-22 20:26:10.449143"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" IS NULL AND ("usuarios"."id" != $1) LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:10.458729"], ["updated_at", "2017-11-22 20:26:10.458729"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:33.319978"], ["updated_at", "2017-11-22 20:26:33.319978"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.33ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:33.335768"], ["updated_at", "2017-11-22 20:26:33.335768"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:33.350915"], ["updated_at", "2017-11-22 20:26:33.350915"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 201 Created in 4ms (Views: 1.0ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:33.357988"], ["updated_at", "2017-11-22 20:26:33.357988"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 201 Created in 3ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" ORDER BY "usuarios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:33.366156"], ["updated_at", "2017-11-22 20:26:33.366156"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:33.370839"], ["updated_at", "2017-11-22 20:26:33.370839"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}, "id"=>"25"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "MyString"], ["id", 25], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:33.379625"], ["updated_at", "2017-11-22 20:26:33.379625"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:33.386186"], ["updated_at", "2017-11-22 20:26:33.386186"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#destroy as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 27]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:33.394786"], ["updated_at", "2017-11-22 20:26:33.394786"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" IS NULL AND ("usuarios"."id" != $1) LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:26:33.402477"], ["updated_at", "2017-11-22 20:26:33.402477"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 20:31:08.348147"], ["updated_at", "2017-11-22 20:31:08.348147"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.32ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.12ms)
+Completed 422 Unprocessable Entity in 6ms (Views: 4.0ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.34ms)
+Completed 422 Unprocessable Entity in 4ms (Views: 0.9ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.12ms)
+Completed 422 Unprocessable Entity in 6ms (Views: 3.2ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.06ms)
+Completed 422 Unprocessable Entity in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.17ms)
+Completed 422 Unprocessable Entity in 7ms (Views: 4.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.18ms)
+Completed 422 Unprocessable Entity in 4ms (Views: 1.0ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.12ms)
+Completed 422 Unprocessable Entity in 5ms (Views: 2.9ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.06ms)
+Completed 422 Unprocessable Entity in 2ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.14ms)
+Completed 422 Unprocessable Entity in 5ms (Views: 3.0ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.06ms)
+Completed 422 Unprocessable Entity in 2ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (3.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.12ms)
+Completed 422 Unprocessable Entity in 6ms (Views: 3.4ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.06ms)
+Completed 422 Unprocessable Entity in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (27.1ms)[0m  [1m[35mALTER TABLE "usuarios" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (16.8ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (7.0ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'audit3_test'[0m
+  [1m[35m (7.2ms)[0m  [1m[35mTRUNCATE TABLE "public"."usuarios" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "usuarios" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:34:44.218029"], ["updated_at", "2017-11-22 21:34:44.218029"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.39ms)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:34:44.237469"], ["updated_at", "2017-11-22 21:34:44.237469"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:34:44.255549"], ["updated_at", "2017-11-22 21:34:44.255549"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 201 Created in 4ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:34:44.262840"], ["updated_at", "2017-11-22 21:34:44.262840"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 201 Created in 3ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" ORDER BY "usuarios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:34:44.272462"], ["updated_at", "2017-11-22 21:34:44.272462"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:34:44.276776"], ["updated_at", "2017-11-22 21:34:44.276776"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}, "id"=>"6"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "MyString"], ["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:34:44.285554"], ["updated_at", "2017-11-22 21:34:44.285554"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:34:44.291573"], ["updated_at", "2017-11-22 21:34:44.291573"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "usuarios" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.9ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.6ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'audit3_test'[0m
+  [1m[35m (14.0ms)[0m  [1m[35mTRUNCATE TABLE "public"."usuarios" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "usuarios" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:36:29.161691"], ["updated_at", "2017-11-22 21:36:29.161691"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.34ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:36:29.177912"], ["updated_at", "2017-11-22 21:36:29.177912"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:36:29.193424"], ["updated_at", "2017-11-22 21:36:29.193424"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 201 Created in 4ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:36:29.200919"], ["updated_at", "2017-11-22 21:36:29.200919"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 201 Created in 3ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" ORDER BY "usuarios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:36:29.210716"], ["updated_at", "2017-11-22 21:36:29.210716"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:36:29.215356"], ["updated_at", "2017-11-22 21:36:29.215356"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}, "id"=>"6"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "MyString"], ["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:36:29.224412"], ["updated_at", "2017-11-22 21:36:29.224412"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:36:29.230950"], ["updated_at", "2017-11-22 21:36:29.230950"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "usuarios" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (5.8ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (2.9ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'audit3_test'[0m
+  [1m[35m (15.9ms)[0m  [1m[35mTRUNCATE TABLE "public"."usuarios" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "usuarios" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "usuarios" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.0ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.6ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'audit3_test'[0m
+  [1m[35m (14.3ms)[0m  [1m[35mTRUNCATE TABLE "public"."usuarios" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "usuarios" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "usuarios" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.9ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.5ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'audit3_test'[0m
+  [1m[35m (14.4ms)[0m  [1m[35mTRUNCATE TABLE "public"."usuarios" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "usuarios" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:42:50.809065"], ["updated_at", "2017-11-22 21:42:50.809065"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:42:50.823822"], ["updated_at", "2017-11-22 21:42:50.823822"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.16ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:42:50.839173"], ["updated_at", "2017-11-22 21:42:50.839173"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 201 Created in 4ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:42:50.846310"], ["updated_at", "2017-11-22 21:42:50.846310"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 201 Created in 3ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" ORDER BY "usuarios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:42:50.855271"], ["updated_at", "2017-11-22 21:42:50.855271"]]
+  [1m[35m (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "name"=>"Some Other Name", "nombre"=>"MyString", "updated_at"=>""}, "id"=>"5"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :name, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "MyString"], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:42:50.865748"], ["updated_at", "2017-11-22 21:42:50.865748"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}, "id"=>"6"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "MyString"], ["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:42:50.876005"], ["updated_at", "2017-11-22 21:42:50.876005"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:42:50.880420"], ["updated_at", "2017-11-22 21:42:50.880420"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:42:50.888761"], ["updated_at", "2017-11-22 21:42:50.888761"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" IS NULL AND ("usuarios"."id" != $1) LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:42:50.899896"], ["updated_at", "2017-11-22 21:42:50.899896"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "usuarios" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.9ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.5ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'audit3_test'[0m
+  [1m[35m (13.9ms)[0m  [1m[35mTRUNCATE TABLE "public"."usuarios" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "usuarios" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:43:01.640877"], ["updated_at", "2017-11-22 21:43:01.640877"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:43:01.655092"], ["updated_at", "2017-11-22 21:43:01.655092"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:43:01.670328"], ["updated_at", "2017-11-22 21:43:01.670328"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 201 Created in 4ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:43:01.677456"], ["updated_at", "2017-11-22 21:43:01.677456"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 201 Created in 3ms (Views: 0.6ms | ActiveRecord: 0.9ms)
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" ORDER BY "usuarios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:43:01.686454"], ["updated_at", "2017-11-22 21:43:01.686454"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "name"=>"Some Other Name", "nombre"=>"MyString", "updated_at"=>""}, "id"=>"5"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :name, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "MyString"], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.9ms)
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:43:01.697785"], ["updated_at", "2017-11-22 21:43:01.697785"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}, "id"=>"6"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "MyString"], ["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:43:01.707581"], ["updated_at", "2017-11-22 21:43:01.707581"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:43:01.712222"], ["updated_at", "2017-11-22 21:43:01.712222"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:43:01.720604"], ["updated_at", "2017-11-22 21:43:01.720604"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" IS NULL AND ("usuarios"."id" != $1) LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:43:01.728600"], ["updated_at", "2017-11-22 21:43:01.728600"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "usuarios" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.2ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.6ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'audit3_test'[0m
+  [1m[35m (5.5ms)[0m  [1m[35mTRUNCATE TABLE "public"."usuarios" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "usuarios" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:44:29.679512"], ["updated_at", "2017-11-22 21:44:29.679512"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.41ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:44:29.697501"], ["updated_at", "2017-11-22 21:44:29.697501"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:44:29.715691"], ["updated_at", "2017-11-22 21:44:29.715691"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 201 Created in 5ms (Views: 1.1ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:44:29.724733"], ["updated_at", "2017-11-22 21:44:29.724733"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 201 Created in 4ms (Views: 0.7ms | ActiveRecord: 1.0ms)
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" ORDER BY "usuarios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", ""], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.1ms)
+Completed 422 Unprocessable Entity in 13ms (Views: 4.4ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:44:29.751510"], ["updated_at", "2017-11-22 21:44:29.751510"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "name"=>"Some Other Name", "nombre"=>"MyString", "updated_at"=>""}, "id"=>"5"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :name, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "MyString"], ["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.19ms)
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 1.2ms)
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:44:29.764065"], ["updated_at", "2017-11-22 21:44:29.764065"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}, "id"=>"6"}
+  [1m[36mUsuario Load (0.7ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "MyString"], ["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.15ms)
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 1.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:44:29.784419"], ["updated_at", "2017-11-22 21:44:29.784419"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"", "updated_at"=>""}, "id"=>"7"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", ""], ["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.16ms)
+Completed 422 Unprocessable Entity in 4ms (Views: 0.7ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:44:29.795175"], ["updated_at", "2017-11-22 21:44:29.795175"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:44:29.803855"], ["updated_at", "2017-11-22 21:44:29.803855"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" IS NULL AND ("usuarios"."id" != $1) LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:44:29.808918"], ["updated_at", "2017-11-22 21:44:29.808918"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "usuarios" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.0ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.6ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'audit3_test'[0m
+  [1m[35m (14.0ms)[0m  [1m[35mTRUNCATE TABLE "public"."usuarios" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "usuarios" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:18.260445"], ["updated_at", "2017-11-22 21:45:18.260445"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:18.275652"], ["updated_at", "2017-11-22 21:45:18.275652"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:18.290824"], ["updated_at", "2017-11-22 21:45:18.290824"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 201 Created in 4ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:18.298520"], ["updated_at", "2017-11-22 21:45:18.298520"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 201 Created in 4ms (Views: 0.7ms | ActiveRecord: 0.9ms)
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" ORDER BY "usuarios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", ""], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.11ms)
+Completed 422 Unprocessable Entity in 17ms (Views: 3.2ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:18.327540"], ["updated_at", "2017-11-22 21:45:18.327540"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"Some Other Name", "updated_at"=>""}, "id"=>"5"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "Some Other Name"], ["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "usuarios" SET "nombre" = $1, "updated_at" = $2 WHERE "usuarios"."id" = $3[0m  [["nombre", "Some Other Name"], ["updated_at", "2017-11-22 21:45:18.332045"], ["id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.8ms)
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:18.339349"], ["updated_at", "2017-11-22 21:45:18.339349"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}, "id"=>"6"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "MyString"], ["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:18.348265"], ["updated_at", "2017-11-22 21:45:18.348265"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"", "updated_at"=>""}, "id"=>"7"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", ""], ["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.07ms)
+Completed 422 Unprocessable Entity in 3ms (Views: 0.4ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:18.357779"], ["updated_at", "2017-11-22 21:45:18.357779"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.8ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:18.369828"], ["updated_at", "2017-11-22 21:45:18.369828"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" IS NULL AND ("usuarios"."id" != $1) LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:18.375341"], ["updated_at", "2017-11-22 21:45:18.375341"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "usuarios" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.9ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.5ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'audit3_test'[0m
+  [1m[35m (13.9ms)[0m  [1m[35mTRUNCATE TABLE "public"."usuarios" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "usuarios" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:44.500569"], ["updated_at", "2017-11-22 21:45:44.500569"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.3ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:44.515212"], ["updated_at", "2017-11-22 21:45:44.515212"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:44.530352"], ["updated_at", "2017-11-22 21:45:44.530352"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 201 Created in 4ms (Views: 0.9ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:44.537449"], ["updated_at", "2017-11-22 21:45:44.537449"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 201 Created in 3ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" ORDER BY "usuarios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.07ms)
+Completed 422 Unprocessable Entity in 8ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:44.557743"], ["updated_at", "2017-11-22 21:45:44.557743"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"Some Other Name", "updated_at"=>""}, "id"=>"5"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "Some Other Name"], ["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "usuarios" SET "nombre" = $1, "updated_at" = $2 WHERE "usuarios"."id" = $3[0m  [["nombre", "Some Other Name"], ["updated_at", "2017-11-22 21:45:44.562042"], ["id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 1.3ms)
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:44.568484"], ["updated_at", "2017-11-22 21:45:44.568484"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}, "id"=>"6"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "MyString"], ["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.12ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:44.576737"], ["updated_at", "2017-11-22 21:45:44.576737"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"", "updated_at"=>""}, "id"=>"7"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", ""], ["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.07ms)
+Completed 422 Unprocessable Entity in 3ms (Views: 0.4ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:44.585946"], ["updated_at", "2017-11-22 21:45:44.585946"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUsuario Load (0.4ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 3ms (ActiveRecord: 1.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:44.595214"], ["updated_at", "2017-11-22 21:45:44.595214"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" IS NULL AND ("usuarios"."id" != $1) LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:44.600362"], ["updated_at", "2017-11-22 21:45:44.600362"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "usuarios" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.9ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.7ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'audit3_test'[0m
+  [1m[35m (14.0ms)[0m  [1m[35mTRUNCATE TABLE "public"."usuarios" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "usuarios" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:53.455275"], ["updated_at", "2017-11-22 21:45:53.455275"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#index as HTML
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT "usuarios".* FROM "usuarios"[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.31ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:53.470072"], ["updated_at", "2017-11-22 21:45:53.470072"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:53.485494"], ["updated_at", "2017-11-22 21:45:53.485494"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 201 Created in 4ms (Views: 0.9ms | ActiveRecord: 1.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:53.492737"], ["updated_at", "2017-11-22 21:45:53.492737"]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.11ms)
+Completed 201 Created in 3ms (Views: 0.6ms | ActiveRecord: 0.9ms)
+  [1m[36mUsuario Load (0.2ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" ORDER BY "usuarios"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by UsuariosController#create as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"", "updated_at"=>""}}
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", ""], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.07ms)
+Completed 422 Unprocessable Entity in 9ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:53.512347"], ["updated_at", "2017-11-22 21:45:53.512347"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"Some Other Name", "updated_at"=>""}, "id"=>"5"}
+  [1m[36mUsuario Load (0.8ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "Some Other Name"], ["id", 5], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "usuarios" SET "nombre" = $1, "updated_at" = $2 WHERE "usuarios"."id" = $3[0m  [["nombre", "Some Other Name"], ["updated_at", "2017-11-22 21:45:53.519042"], ["id", 5]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 1.9ms)
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:53.525496"], ["updated_at", "2017-11-22 21:45:53.525496"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"MyString", "updated_at"=>""}, "id"=>"6"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", "MyString"], ["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered UsuarioSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:53.534263"], ["updated_at", "2017-11-22 21:45:53.534263"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by UsuariosController#update as HTML
+  Parameters: {"usuario"=>{"created_at"=>"", "id"=>"", "nombre"=>"", "updated_at"=>""}, "id"=>"7"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Unpermitted parameters: :created_at, :id, :updated_at
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 AND ("usuarios"."id" != $2) LIMIT $3[0m  [["nombre", ""], ["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with ActiveModel::Errors (0.07ms)
+Completed 422 Unprocessable Entity in 3ms (Views: 0.4ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:53.543075"], ["updated_at", "2017-11-22 21:45:53.543075"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+Processing by UsuariosController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUsuario Load (0.3ms)[0m  [1m[34mSELECT  "usuarios".* FROM "usuarios" WHERE "usuarios"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "usuarios" WHERE "usuarios"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 3ms (ActiveRecord: 1.1ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "usuarios"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:53.553501"], ["updated_at", "2017-11-22 21:45:53.553501"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" IS NULL AND ("usuarios"."id" != $1) LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "usuarios" ("nombre", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["nombre", "MyString"], ["created_at", "2017-11-22 21:45:53.558618"], ["updated_at", "2017-11-22 21:45:53.558618"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mUsuario Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "usuarios" WHERE "usuarios"."nombre" = $1 LIMIT $2[0m  [["nombre", "MyString"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m

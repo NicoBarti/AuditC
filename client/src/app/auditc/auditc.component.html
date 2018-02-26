@@ -1,0 +1,41 @@
+
+<div class="jumbotron">
+
+  <form (ngSubmit)="enviar()">
+
+    <div>
+      <label for="p1">Pregunta 1</label>
+      <input  type="number"
+              [(ngModel)]="model.p1"
+              name="p1"
+              id="p1"
+              required>
+    </div>
+
+    <br>
+
+    <div>
+      <label for="p2">Pregunta 2</label>
+      <input  type="number"
+              [(ngModel)]="model.p2"
+              name="p2"
+              id="p2"
+              required>
+    </div>
+
+    <br>
+
+    <div>
+      <label for="p3">Pregunta 3</label>
+      <input  type="number"
+              [(ngModel)]="model.p3"
+              name="p3"
+              id="p3"
+              required>
+    </div>
+
+  <button type="submit">Enviar</button>
+
+  </form>
+    
+</div>
