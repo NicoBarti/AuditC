@@ -1,0 +1,86 @@
+<form (ngSubmit)="almacenaPuntaje()" class="form-control">
+
+  <div>
+    <label for="p1"><h4>En una ocasión típica, ¿Cuántos tragos suele tomar?</h4></label>
+    <h6 class="text-muted">Elija una cantidad para los tragos que correspondan</h6>
+
+    <br>
+
+    <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">Tipo de bebida</th>
+      <th scope="col">Cantidad por ocasión</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr>
+      <th scope="row"> <img class="card-img-top" src="../../../assets/images/tragos/cerveza_1.png"></th>
+      <td class="align-middle font-weight-bold">Lata de cerveza </td>
+      <td class="align-middle" >
+        <select class="form-control input-lg"
+                    [(ngModel)]="cerveza"
+                    name="t1"
+                    id="t1"
+                    required
+                    #t1="ngModel">
+              <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
+        </select>
+
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row"> <img class="card-img-top" src="../../../assets/images/tragos/vino_1.png"></th>
+      <td class="align-middle font-weight-bold">Copa de vino</td>
+      <td class="align-middle" >
+        <select class="form-control input-lg"
+                    [(ngModel)]="vino"
+                    name="t2"
+                    id="t2"
+                    required
+                    #t2="ngModel">
+              <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
+        </select>
+
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row"> <img class="card-img-top" src="../../../assets/images/tragos/corto_1.png"></th>
+      <td class="align-middle font-weight-bold">Corto de licor</td>
+      <td class="align-middle" >
+        <select class="form-control input-lg"
+                    [(ngModel)]="destilado"
+                    name="t3"
+                    id="t3"
+                    required
+                    #t3="ngModel">
+              <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
+        </select>
+
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+  </div>
+
+  <br>
+
+  <button type="submit" class="btn btn-success"
+  [disabled]="t1.invalid && t2.invalid && t3.invalid">
+    Siguiente</button>
+
+  </form>
+
+
+  <br>
+  <div class="progress">
+  <div class="progress-bar w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+</div>

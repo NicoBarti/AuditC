@@ -26,14 +26,18 @@ export class UsuarioService {
   signIn(params) {
     this._tokenService.signIn(params).subscribe(res => {
       // this.set_userInfo(res)
-      this.router.navigate(['']);
-    });
+      this.router.navigate(['auditc/p1']);
+    },
+    err => {
+      this.router.navigate(['/sign-in/nu'])
+    }
+  );
   };
 
   registerAccount(params) {
       this._tokenService.registerAccount(params).subscribe(res => {
         // this.set_userInfo(res)
-        this.router.navigate(['']);
+        this.router.navigate(['auditc/p1']);
       });
   };
 

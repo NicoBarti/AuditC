@@ -1,0 +1,26 @@
+<form (ngSubmit)="almacenaPuntaje()" class="form-control">
+
+  <div>
+    <label for="p1"><h4>¿Cuán frecuentemente toma más de 5 tragos en 1 ocasión?</h4></label>
+    <br>
+    <select class="form-control input-lg"
+
+            [(ngModel)]="model"
+            name="p1"
+            id="p1"
+            required
+            #p1="ngModel">
+      <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
+    </select>
+
+  </div>
+  <br>
+  <button type="submit" class="btn btn-success"
+  [disabled]="p1.invalid">
+    Siguiente</button>
+
+  </form>
+  <br>
+  <div class="progress">
+  <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
