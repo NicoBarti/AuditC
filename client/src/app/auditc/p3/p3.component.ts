@@ -6,7 +6,7 @@ import {slideInDownAnimation} from '../../animaciones'
 
 import { HostBinding } from '@angular/core';
 
-import { T5cervezaComponent } from './../laminas/t5cerveza/t5cerveza.component';
+// import { T5cervezaComponent } from './../laminas/t5cerveza/t5cerveza.component';
 
 
 @Component({

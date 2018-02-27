@@ -30,8 +30,8 @@ import { SumaPuntajeService } from './suma-puntaje.service'
      P3Component,
      AuditcComponent,
    T5cervezaComponent,
-    T5vasoVinoComponent
-  T6piscolaComponent,
+    T5vasoVinoComponent,
+  T6piscolaComponent
   ],
   providers: [SumaPuntajeService]
 })
