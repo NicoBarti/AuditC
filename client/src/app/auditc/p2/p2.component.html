@@ -65,8 +65,155 @@
       </td>
     </tr>
 
+    <tr>
+      <th scope="row"> <img class="card-img-top" src="../../../assets/images/tragos/shop_grande.png"></th>
+      <td class="align-middle font-weight-bold">Shop grande</td>
+      <td class="align-middle" >
+        <select class="form-control input-lg"
+                    [(ngModel)]="shop_grande"
+                    name="t4"
+                    id="t4"
+                    required
+                    #t4="ngModel">
+              <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
+        </select>
+
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row"> <img class="card-img-top" src="../../../assets/images/tragos/vaso_vino.png"></th>
+      <td class="align-middle font-weight-bold">Vaso de Vino (caña)</td>
+      <td class="align-middle" >
+        <select class="form-control input-lg"
+                    [(ngModel)]="vaso_vino"
+                    name="t5"
+                    id="t5"
+                    required
+                    #t5="ngModel">
+              <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
+        </select>
+
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row"> <img class="card-img-top" src="../../../assets/images/tragos/combinado_simple.png"></th>
+      <td class="align-middle font-weight-bold">Combinado simple (piscola suave)</td>
+      <td class="align-middle" >
+        <select class="form-control input-lg"
+                    [(ngModel)]="combinado_simple"
+                    name="t6"
+                    id="t6"
+                    required
+                    #t6="ngModel">
+              <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
+        </select>
+
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row"> <img class="card-img-top" src="../../../assets/images/tragos/combinado_fuerte.png"></th>
+      <td class="align-middle font-weight-bold">Combinado fuerte (CABEZÓN)</td>
+      <td class="align-middle" >
+        <select class="form-control input-lg"
+                    [(ngModel)]="combinado_fuerte"
+                    name="t7"
+                    id="t7"
+                    required
+                    #t7="ngModel">
+              <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
+        </select>
+
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row"> <img class="card-img-top" src="../../../assets/images/tragos/shop_pequeno.png"></th>
+      <td class="align-middle font-weight-bold">Shop pequeño</td>
+      <td class="align-middle" >
+        <select class="form-control input-lg"
+                    [(ngModel)]="shop_pequeno"
+                    name="t8"
+                    id="t8"
+                    required
+                    #t8="ngModel">
+              <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
+        </select>
+
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row"> <img class="card-img-top" src="../../../assets/images/tragos/botella_cerveza.png"></th>
+      <td class="align-middle font-weight-bold">Botella de cerveza</td>
+      <td class="align-middle" >
+        <select class="form-control input-lg"
+                    [(ngModel)]="botella_cerveza"
+                    name="t9"
+                    id="t9"
+                    required
+                    #t9="ngModel">
+              <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
+        </select>
+
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row"> <img class="card-img-top" src="../../../assets/images/tragos/botella_vino.png"></th>
+      <td class="align-middle font-weight-bold">Botella de vino</td>
+      <td class="align-middle" >
+        <select class="form-control input-lg"
+                    [(ngModel)]="botella_vino"
+                    name="t10"
+                    id="t10"
+                    required
+                    #t10="ngModel">
+              <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
+        </select>
+
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row"> <img class="card-img-top" src="../../../assets/images/tragos/caja_vino.png"></th>
+      <td class="align-middle font-weight-bold">Caja de vino (Tetrapack)</td>
+      <td class="align-middle" >
+        <select class="form-control input-lg"
+                    [(ngModel)]="caja_vino"
+                    name="t11"
+                    id="t11"
+                    required
+                    #t11="ngModel">
+              <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
+        </select>
+
+      </td>
+    </tr>
+
+    <tr>
+      <th scope="row"> <img class="card-img-top" src="../../../assets/images/tragos/botella_licor.png"></th>
+      <td class="align-middle font-weight-bold">Botella de licor</td>
+      <td class="align-middle" >
+        <select class="form-control input-lg"
+                    [(ngModel)]="botella_licor"
+                    name="t12"
+                    id="t12"
+                    required
+                    #t12="ngModel">
+              <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
+        </select>
+
+      </td>
+    </tr>
+
   </tbody>
+
 </table>
+
+<!-- <button type="button" class="btn btn-secondary btn-sm btn-block">Ver más opciones</button> -->
 
 
   </div>
@@ -74,7 +221,9 @@
   <br>
 
   <button type="submit" class="btn btn-success"
-  [disabled]="t1.invalid && t2.invalid && t3.invalid">
+  [disabled]="t1.invalid && t2.invalid && t3.invalid && t4.invalid && t5.invalid
+  && t6.invalid && t7.invalid && t8.invalid && t9.invalid && t10.invalid && t11.invalid
+  && t12.invalid">
     Siguiente</button>
 
   </form>
