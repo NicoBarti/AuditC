@@ -35,8 +35,8 @@ import { InfoinicioComponent } from './auditc/infoinicio/infoinicio.component';
     NuevoUsuarioFormaComponent,
     NuevoUsuarioSesionComponent,
     NuComponent,
-    InfoinicioComponent
-    // HomeComponent,
+    InfoinicioComponent,
+    
   ],
   imports: [
     HttpModule,
