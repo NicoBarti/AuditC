@@ -1,12 +1,10 @@
-import { Injectable , Input} from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Bebidas } from './bebidas'
 
 @Injectable()
 export class TragosService {
 
-  constructor() { }
-
-  @Input('bebidas') bebidas: Bebidas;
+  constructor() {}
 
 convertir(data: Bebidas): number {
   let tragos_estandar:number = (data.cerveza *1) + (data.vino *1) + (data.destilado *1)
@@ -33,13 +31,4 @@ convertir(data: Bebidas): number {
 
   return puntaje
  }
-
- setBebidas(data: Bebidas):void {
-   this.bebidas = data
- }
-
- getBebidas(): Bebidas {
-  return this.bebidas
-}
-
 }
