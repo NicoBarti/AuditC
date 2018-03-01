@@ -30,17 +30,12 @@ export class P3Component implements OnInit {
 
   enviar() {
     this.almacenaConsumoService.setP3(this.model);
-    
+    this.router.navigate(['ib'])
+
 console.log(this.almacenaConsumoService.getPerfilConsumo())
 
-    let auditC_puntaje = this.almacenaConsumoService.getAuditc()
-      if(auditC_puntaje > 4)
-        {
-          this.router.navigate(['ib/m'])}
-      else
-        {
-          this.router.navigate(['ib/b'])
-      }
+
+  
     }
 
   }
