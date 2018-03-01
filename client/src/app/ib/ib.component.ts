@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlmacenaConsumoService } from '../almacena-consumo.service'
 
 @Component({
   template: '<router-outlet></router-outlet>'
@@ -9,9 +10,15 @@ import { Router } from '@angular/router';
 })
 export class IbComponent implements OnInit {
 
-  constructor( private router: Router) { }
+  constructor( private router: Router
+              private almacenaConsumoService: AlmacenaConsumoService) { }
 
   ngOnInit() {
+
+    if (this.almacenaConsumoService.getP1() === null){this.router.navigate(['auditc/'])}
+    else if(this.almacenaConsumoService.getAuditc() > 4){this.router.navigate(['ib/m'])}
+    else { this.router.navigate(['ib/b'] }
+
   }
 
 }
