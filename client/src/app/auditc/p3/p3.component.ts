@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {OpcionesPreguntas} from '../opciones-preguntas'
-import {SumaPuntajeService} from '../suma-puntaje.service'
 import { Router } from '@angular/router';
 import {slideInDownAnimation} from '../../animaciones'
 
 import { HostBinding } from '@angular/core';
-
-// import { T5cervezaComponent } from './../laminas/t5cerveza/t5cerveza.component';
-
+import {AlmacenaConsumoService} from '../../almacena-consumo.service'
 
 @Component({
   selector: 'app-p3',
@@ -22,7 +19,7 @@ export class P3Component implements OnInit {
   @HostBinding('style.display')   display = 'block';
   @HostBinding('style.position')  position = 'relative';
 
-  constructor(private sumaPuntajeService: SumaPuntajeService,
+  constructor(private almacenaConsumoService: AlmacenaConsumoService,
               private router: Router) { }
 
   opciones = OpcionesPreguntas.p3
@@ -31,9 +28,19 @@ export class P3Component implements OnInit {
   ngOnInit() {
   }
 
-  almacenaPuntaje() {
-    this.sumaPuntajeService.setP3(this.model);
+  enviar() {
+    this.almacenaConsumoService.setP3(this.model);
+    
+console.log(this.almacenaConsumoService.getPerfilConsumo())
+
+    let auditC_puntaje = this.almacenaConsumoService.getAuditc()
+      if(auditC_puntaje > 4)
+        {
+          this.router.navigate(['ib/m'])}
+      else
+        {
+          this.router.navigate(['ib/b'])
+      }
+    }
+
   }
-
-
-}

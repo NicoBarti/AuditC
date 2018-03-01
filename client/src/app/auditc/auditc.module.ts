@@ -14,7 +14,7 @@ import { T6piscolaComponent } from '../laminas/t6piscola/t6piscola.component';
 
 import { AuditcRoutingModule } from './auditc-routing.module'
 
-import { SumaPuntajeService } from './suma-puntaje.service'
+import { AlmacenaConsumoService} from '../almacena-consumo.service'
 
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -31,9 +31,10 @@ import { SumaPuntajeService } from './suma-puntaje.service'
      AuditcComponent,
    T5cervezaComponent,
     T5vasoVinoComponent,
-  T6piscolaComponent
+  T6piscolaComponent,
   ],
-  providers: [SumaPuntajeService]
+  providers: [
+              AlmacenaConsumoService]
 })
 
 export class AuditcModule {}
