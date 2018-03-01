@@ -35,9 +35,9 @@ export class P2Component {
 almacenaPuntaje(data): void {
   // console.log(data);
   this.sumaPuntajeService.setP2(
-    this.tragosService.convertir(data)
+    this.tragosService.convertir(data));
   this.router.navigate(['auditc/p3'])
-  )
+  
 }
 
 }
