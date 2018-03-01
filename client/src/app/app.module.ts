@@ -18,7 +18,7 @@ import { NuevoUsuarioFormaComponent } from './nuevo-usuario-forma/nuevo-usuario-
 import { NuevoUsuarioSesionComponent } from './nuevo-usuario-sesion/nuevo-usuario-sesion.component'
 
 import { UsuarioService } from './usuario.service';
-import { ConvertirTragosService } from './auditc/convertir-tragos.service'
+import { TragosService } from './tragos.service'
 // import { HomeComponent } from './home/home.component'
 
 import { AuthGuard } from './auth-guard';
@@ -36,7 +36,7 @@ import { InfoinicioComponent } from './auditc/infoinicio/infoinicio.component';
     NuevoUsuarioSesionComponent,
     NuComponent,
     InfoinicioComponent,
-    
+
   ],
   imports: [
     HttpModule,
@@ -53,7 +53,7 @@ import { InfoinicioComponent } from './auditc/infoinicio/infoinicio.component';
   ],
   providers: [Angular2TokenService,
               UsuarioService,
-              ConvertirTragosService,
+              TragosService,
               AuthGuard],
   bootstrap: [AppComponent]
 })

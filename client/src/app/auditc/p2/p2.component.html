@@ -1,4 +1,4 @@
-<form (ngSubmit)="almacenaPuntaje()" class="form-control">
+<form #newP2Form="ngForm" (ngSubmit)="almacenaPuntaje(newP2Form.value)" class="form-control">
 
   <div>
     <label for="p1"><h4>¿Qué suele tomar en un día de consumo normal?</h4></label>
@@ -22,11 +22,10 @@
       <td class="align-middle font-weight-bold">Lata de cerveza </td>
       <td class="align-middle" >
         <select class="form-control input-lg"
-                    [(ngModel)]="cerveza"
-                    name="t1"
-                    id="t1"
+                    name="cerveza"
                     required
-                    #t1="ngModel">
+                    #t1="ngModel"
+                    ngModel>
               <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
         </select>
 
@@ -38,11 +37,10 @@
       <td class="align-middle font-weight-bold">Copa de vino</td>
       <td class="align-middle" >
         <select class="form-control input-lg"
-                    [(ngModel)]="vino"
-                    name="t2"
-                    id="t2"
+                    name="vino"
                     required
-                    #t2="ngModel">
+                    #t2="ngModel"
+                    ngModel>
               <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
         </select>
 
@@ -54,11 +52,10 @@
       <td class="align-middle font-weight-bold">Corto de licor</td>
       <td class="align-middle" >
         <select class="form-control input-lg"
-                    [(ngModel)]="destilado"
-                    name="t3"
-                    id="t3"
+                    name="destilado"
                     required
-                    #t3="ngModel">
+                    #t3="ngModel"
+                    ngModel>
               <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
         </select>
 
@@ -70,11 +67,10 @@
       <td class="align-middle font-weight-bold">Shop grande</td>
       <td class="align-middle" >
         <select class="form-control input-lg"
-                    [(ngModel)]="shop_grande"
-                    name="t4"
-                    id="t4"
+                    name="shop_grande"
                     required
-                    #t4="ngModel">
+                    #t4="ngModel"
+                    ngModel>
               <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
         </select>
 
@@ -86,11 +82,10 @@
       <td class="align-middle font-weight-bold">Vaso de Vino (caña)</td>
       <td class="align-middle" >
         <select class="form-control input-lg"
-                    [(ngModel)]="vaso_vino"
-                    name="t5"
-                    id="t5"
+                    name="vaso_vino"
                     required
-                    #t5="ngModel">
+                    #t5="ngModel"
+                    ngModel>
               <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
         </select>
 
@@ -102,11 +97,10 @@
       <td class="align-middle font-weight-bold">Combinado simple (piscola suave)</td>
       <td class="align-middle" >
         <select class="form-control input-lg"
-                    [(ngModel)]="combinado_simple"
-                    name="t6"
-                    id="t6"
+                    name="combinado_simple"
                     required
-                    #t6="ngModel">
+                    #t6="ngModel"
+                    ngModel>
               <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
         </select>
 
@@ -118,11 +112,10 @@
       <td class="align-middle font-weight-bold">Combinado fuerte (CABEZÓN)</td>
       <td class="align-middle" >
         <select class="form-control input-lg"
-                    [(ngModel)]="combinado_fuerte"
-                    name="t7"
-                    id="t7"
+                    name="combinado_fuerte"
                     required
-                    #t7="ngModel">
+                    #t7="ngModel"
+                    ngModel>
               <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
         </select>
 
@@ -134,11 +127,10 @@
       <td class="align-middle font-weight-bold">Shop pequeño</td>
       <td class="align-middle" >
         <select class="form-control input-lg"
-                    [(ngModel)]="shop_pequeno"
-                    name="t8"
-                    id="t8"
+                    name="shop_pequeno"
                     required
-                    #t8="ngModel">
+                    #t8="ngModel"
+                    ngModel>
               <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
         </select>
 
@@ -150,11 +142,10 @@
       <td class="align-middle font-weight-bold">Botella de cerveza</td>
       <td class="align-middle" >
         <select class="form-control input-lg"
-                    [(ngModel)]="botella_cerveza"
-                    name="t9"
-                    id="t9"
+                    name="botella_cerveza"
                     required
-                    #t9="ngModel">
+                    #t9="ngModel"
+                    ngModel>
               <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
         </select>
 
@@ -166,11 +157,10 @@
       <td class="align-middle font-weight-bold">Botella de vino</td>
       <td class="align-middle" >
         <select class="form-control input-lg"
-                    [(ngModel)]="botella_vino"
-                    name="t10"
-                    id="t10"
+                    name="botella_vino"
                     required
-                    #t10="ngModel">
+                    #t10="ngModel"
+                    ngModel>
               <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
         </select>
 
@@ -182,11 +172,10 @@
       <td class="align-middle font-weight-bold">Caja de vino (Tetrapack)</td>
       <td class="align-middle" >
         <select class="form-control input-lg"
-                    [(ngModel)]="caja_vino"
-                    name="t11"
-                    id="t11"
+                    name="caja_vino"
                     required
-                    #t11="ngModel">
+                    #t11="ngModel"
+                    ngModel>
               <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
         </select>
 
@@ -198,11 +187,10 @@
       <td class="align-middle font-weight-bold">Botella de licor</td>
       <td class="align-middle" >
         <select class="form-control input-lg"
-                    [(ngModel)]="botella_licor"
-                    name="t12"
-                    id="t12"
+                    name="botella_licor"
                     required
-                    #t12="ngModel">
+                    #t12="ngModel"
+                    ngModel>
               <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
         </select>
 
@@ -223,7 +211,8 @@
   <button type="submit" class="btn btn-success"
   [disabled]="t1.invalid && t2.invalid && t3.invalid && t4.invalid && t5.invalid
   && t6.invalid && t7.invalid && t8.invalid && t9.invalid && t10.invalid && t11.invalid
-  && t12.invalid">
+  && t12.invalid"
+  >
     Siguiente</button>
 
   </form>
