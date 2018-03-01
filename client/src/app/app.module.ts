@@ -19,6 +19,7 @@ import { NuevoUsuarioSesionComponent } from './nuevo-usuario-sesion/nuevo-usuari
 
 import { UsuarioService } from './usuario.service';
 import { TragosService } from './tragos.service'
+import { AlmacenaConsumoService} from './almacena-consumo.service'
 // import { HomeComponent } from './home/home.component'
 
 import { AuthGuard } from './auth-guard';

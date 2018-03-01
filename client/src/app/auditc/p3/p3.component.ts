@@ -32,10 +32,6 @@ export class P3Component implements OnInit {
     this.almacenaConsumoService.setP3(this.model);
     this.router.navigate(['ib'])
 
-console.log(this.almacenaConsumoService.getPerfilConsumo())
-
-
-  
     }
 
   }

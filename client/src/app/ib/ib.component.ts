@@ -10,14 +10,18 @@ import { AlmacenaConsumoService } from '../almacena-consumo.service'
 })
 export class IbComponent implements OnInit {
 
-  constructor( private router: Router
+  constructor( private router: Router,
               private almacenaConsumoService: AlmacenaConsumoService) { }
 
   ngOnInit() {
 
-    if (this.almacenaConsumoService.getP1() === null){this.router.navigate(['auditc/'])}
-    else if(this.almacenaConsumoService.getAuditc() > 4){this.router.navigate(['ib/m'])}
-    else { this.router.navigate(['ib/b'] }
+    // if (this.almacenaConsumoService.getP1() === null){this.router.navigate(['auditc/p1']);}
+
+    let AuditC = this.almacenaConsumoService.getAuditc();
+    console.log('puntaje Audit C= ' + AuditC)
+
+    if( AuditC > 4){this.router.navigate(['ib/m']);}
+    else { this.router.navigate(['ib/b']); }
 
   }
 

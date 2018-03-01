@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlmacenaConsumoService } from '../../../almacena-consumo.service'
 
 @Component({
   selector: 'app-b2',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class B2Component implements OnInit {
 
-  constructor() { }
+  constructor( private almacenaConsumoService: AlmacenaConsumoService) {}
 
   ngOnInit() {
+    console.log(this.almacenaConsumoService.getBebidas())
   }
 
 }

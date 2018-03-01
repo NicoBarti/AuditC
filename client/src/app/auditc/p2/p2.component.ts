@@ -36,8 +36,10 @@ export class P2Component {
 
 enviar(data): void {
   // console.log(data);
+  // console.log(data)
   this.almacenaConsumoService.setP2(
     this.tragosService.convertir(data));
+  this.almacenaConsumoService.setBebidas(data);
 
   this.router.navigate(['auditc/p3'])
 

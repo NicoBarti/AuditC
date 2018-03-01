@@ -29,7 +29,7 @@ export class AlmacenaConsumoService {
   constructor() { }
 
   setP1(data: number): void {
-    this.perfilConsumo.p1 = data
+    this.perfilConsumo.p1 = Number(data)
   };
 
   getP1(): number{
@@ -37,7 +37,7 @@ export class AlmacenaConsumoService {
   };
 
   setP2(data: number): void {
-    this.perfilConsumo.p2 = data
+    this.perfilConsumo.p2 = Number(data)
   };
 
   getP2(): number{
@@ -45,7 +45,7 @@ export class AlmacenaConsumoService {
   };
 
   setP3(data: number): void {
-    this.perfilConsumo.p3 = data
+    this.perfilConsumo.p3 = Number(data)
   };
 
   getP3(): number{
@@ -53,7 +53,7 @@ export class AlmacenaConsumoService {
   };
 
   setBebidas(data: Bebidas):void{
-    this.perfilConsumo.bebidas = data
+    for(var i in data) {this.perfilConsumo.bebidas[i] = data[i]}
   };
 
   getAuditc(): number{

@@ -14,6 +14,7 @@ import { M2Component } from './moderado/m2/m2.component';
 import { IbComponent } from './ib.component';
 
 import { IbRoutingModule } from './ib-routing.module';
+import { AlmacenaConsumoService} from '../almacena-consumo.service'
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -31,7 +32,7 @@ import { IbRoutingModule } from './ib-routing.module';
      ModeradoComponent,
      M1Component,
      M2Component],
-  providers: []
+  providers: [AlmacenaConsumoService]
 })
 
 export class IbModule {}
