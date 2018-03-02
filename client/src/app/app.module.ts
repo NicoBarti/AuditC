@@ -37,6 +37,7 @@ import { InfoinicioComponent } from './auditc/infoinicio/infoinicio.component';
     NuevoUsuarioSesionComponent,
     NuComponent,
     InfoinicioComponent,
+    
 
   ],
   imports: [

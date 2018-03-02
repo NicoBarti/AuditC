@@ -13,6 +13,9 @@ import { M2Component } from './moderado/m2/m2.component';
 
 import { IbComponent } from './ib.component';
 
+import { LaminaBajoRiesgo2TragosOcasionComponent } from '../laminas/lamina-bajo-riesgo2-tragos-ocasion/lamina-bajo-riesgo2-tragos-ocasion.component';
+
+
 import { IbRoutingModule } from './ib-routing.module';
 import { AlmacenaConsumoService} from '../almacena-consumo.service'
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -31,7 +34,8 @@ import { AlmacenaConsumoService} from '../almacena-consumo.service'
      IbComponent,
      ModeradoComponent,
      M1Component,
-     M2Component],
+     M2Component,
+   LaminaBajoRiesgo2TragosOcasionComponent],
   providers: [AlmacenaConsumoService]
 })
 

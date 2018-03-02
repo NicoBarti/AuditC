@@ -1,14 +1,14 @@
 export interface Bebidas {
-  cerveza: number,
-  vino: number,
-  destilado:number,
-  shop_grande: number,
-  vaso_vino: number,
-  combinado_simple: number,
-  combinado_fuerte: number,
-  shop_pequeno: number,
-  botella_cerveza:number,
-  botella_vino: number,
-  caja_vino: number,
-  botella_licor: number
+  cerveza: any,
+  vino: any,
+  destilado:any,
+  shop_grande: any,
+  vaso_vino: any,
+  combinado_simple: any,
+  combinado_fuerte: any,
+  shop_pequeno: any,
+  botella_cerveza:any,
+  botella_vino: any,
+  caja_vino: any,
+  botella_licor: any
 }
