@@ -11,7 +11,20 @@ export class B2Component implements OnInit {
   constructor( private almacenaConsumoService: AlmacenaConsumoService) {}
 
   ngOnInit() {
-    console.log(this.almacenaConsumoService.getBebidas())
+    let bebidas = this.almacenaConsumoService.getBebidas()
+    let orden = []
+
+    for(var bebida in bebidas) {
+      if (bebidas.hasOwnProperty(bebida)) {
+        orden.push({
+          'bebida': bebida,
+          'cantidad': bebidas[bebida]
+        });
+      }
+    }
+
+    console.log(orden.sort(function(a,b) {return b.cantidad - a.cantidad}))
+
   }
 
 }

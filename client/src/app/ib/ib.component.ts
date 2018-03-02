@@ -18,7 +18,6 @@ export class IbComponent implements OnInit {
     // if (this.almacenaConsumoService.getP1() === null){this.router.navigate(['auditc/p1']);}
 
     let AuditC = this.almacenaConsumoService.getAuditc();
-    console.log('puntaje Audit C= ' + AuditC)
 
     if( AuditC > 4){this.router.navigate(['ib/m']);}
     else { this.router.navigate(['ib/b']); }
