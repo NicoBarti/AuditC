@@ -39,6 +39,8 @@ import { InfoinicioComponent } from './auditc/infoinicio/infoinicio.component';
     InfoinicioComponent,
     
 
+
+
   ],
   imports: [
     HttpModule,

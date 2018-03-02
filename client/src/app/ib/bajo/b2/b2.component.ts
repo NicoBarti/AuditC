@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlmacenaConsumoService } from '../../../almacena-consumo.service'
+// import { AlmacenaConsumoService } from '../../../almacena-consumo.service'
 import { LaminaBajoRiesgo2TragosOcasionComponent } from '../../../laminas/lamina-bajo-riesgo2-tragos-ocasion/lamina-bajo-riesgo2-tragos-ocasion.component';
 
 
@@ -10,8 +10,8 @@ import { LaminaBajoRiesgo2TragosOcasionComponent } from '../../../laminas/lamina
 })
 export class B2Component implements OnInit {
 
-  constructor( private almacenaConsumoService: AlmacenaConsumoService) {}
-
+  constructor( ) {}
+// private almacenaConsumoService: AlmacenaConsumoService
   ngOnInit() {
   }
 
