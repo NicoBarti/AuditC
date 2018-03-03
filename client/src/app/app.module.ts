@@ -28,6 +28,7 @@ import { AuditcModule } from './auditc/auditc.module';
 import { IbModule } from './ib/ib.module';
 import { NuComponent } from './nuevo-usuario-sesion/nu/nu.component';
 import { InfoinicioComponent } from './auditc/infoinicio/infoinicio.component';
+// import { TragosEquivalentesComponent } from './laminas/tragos-equivalentes/tragos-equivalentes.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { InfoinicioComponent } from './auditc/infoinicio/infoinicio.component';
     NuevoUsuarioSesionComponent,
     NuComponent,
     InfoinicioComponent,
-    
+    // TragosEquivalentesComponent,
+
 
 
 

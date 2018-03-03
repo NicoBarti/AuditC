@@ -10,6 +10,8 @@ import { T5cervezaComponent } from '../laminas/t5cerveza/t5cerveza.component';
 import { T5vasoVinoComponent } from '../laminas/t5vaso-vino/t5vaso-vino.component';
 import { T6piscolaComponent } from '../laminas/t6piscola/t6piscola.component';
 
+import {TragosEquivalentesComponent} from '../laminas/tragos-equivalentes/tragos-equivalentes.component'
+
 
 
 import { AuditcRoutingModule } from './auditc-routing.module'
@@ -32,6 +34,7 @@ import { AlmacenaConsumoService} from '../almacena-consumo.service'
    T5cervezaComponent,
     T5vasoVinoComponent,
   T6piscolaComponent,
+  TragosEquivalentesComponent,
   ],
   providers: [
               AlmacenaConsumoService]
