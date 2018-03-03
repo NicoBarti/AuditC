@@ -16,13 +16,14 @@ import { AuditcRoutingModule } from './auditc-routing.module'
 
 import { AlmacenaConsumoService} from '../almacena-consumo.service'
 
-// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    AuditcRoutingModule
+    AuditcRoutingModule,
+    NgbModule
   ],
   declarations: [
      P1Component,

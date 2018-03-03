@@ -21,13 +21,14 @@ import { LaminaRiesgoModerado4TragosOcasionComponent } from '../laminas/lamina-r
 
 import { IbRoutingModule } from './ib-routing.module';
 import { AlmacenaConsumoService} from '../almacena-consumo.service'
-// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IbRoutingModule,
+    NgbModule
   ],
   declarations: [
      B1Component,
