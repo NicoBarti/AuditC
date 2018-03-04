@@ -14,6 +14,10 @@ import { AppComponent } from './app.component';
 import { NuevoUsuarioComponent } from './nuevo-usuario/nuevo-usuario.component';
 
 import { Audit3RoutingModule } from './app-routing.module';
+import { AuditcModule } from './auditc/auditc.module';
+import { IbModule } from './ib/ib.module';
+import { LaminasModule} from './laminas/laminas.module'
+
 import { NuevoUsuarioFormaComponent } from './nuevo-usuario-forma/nuevo-usuario-forma.component';
 import { NuevoUsuarioSesionComponent } from './nuevo-usuario-sesion/nuevo-usuario-sesion.component'
 
@@ -24,8 +28,6 @@ import { AlmacenaConsumoService} from './almacena-consumo.service'
 
 import { AuthGuard } from './auth-guard';
 
-import { AuditcModule } from './auditc/auditc.module';
-import { IbModule } from './ib/ib.module';
 import { NuComponent } from './nuevo-usuario-sesion/nu/nu.component';
 import { InfoinicioComponent } from './auditc/infoinicio/infoinicio.component';
 // import { TragosEquivalentesComponent } from './laminas/tragos-equivalentes/tragos-equivalentes.component';
@@ -38,10 +40,6 @@ import { InfoinicioComponent } from './auditc/infoinicio/infoinicio.component';
     NuevoUsuarioSesionComponent,
     NuComponent,
     InfoinicioComponent,
-
-
-
-
   ],
   imports: [
     HttpModule,
@@ -53,7 +51,8 @@ import { InfoinicioComponent } from './auditc/infoinicio/infoinicio.component';
     AuditcModule,
     IbModule,
     Audit3RoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LaminasModule
 
   ],
   providers: [Angular2TokenService,

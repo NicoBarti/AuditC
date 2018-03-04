@@ -12,23 +12,21 @@ import { M1Component } from './moderado/m1/m1.component';
 import { M2Component } from './moderado/m2/m2.component';
 import { M3Component } from './moderado/m3/m3.component';
 
-
 import { IbComponent } from './ib.component';
-
-import { LaminaBajoRiesgo2TragosOcasionComponent } from '../laminas/lamina-bajo-riesgo2-tragos-ocasion/lamina-bajo-riesgo2-tragos-ocasion.component';
-import { LaminaRiesgoModerado4TragosOcasionComponent } from '../laminas/lamina-riesgo-moderado4-tragos-ocasion/lamina-riesgo-moderado4-tragos-ocasion.component';
-
 
 import { IbRoutingModule } from './ib-routing.module';
 import { AlmacenaConsumoService} from '../almacena-consumo.service'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+import {LaminasModule} from '../laminas/laminas.module'
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IbRoutingModule,
-    NgbModule
+    NgbModule,
+    LaminasModule
   ],
   declarations: [
      B1Component,
@@ -39,9 +37,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
      ModeradoComponent,
      M1Component,
      M2Component,
-     LaminaBajoRiesgo2TragosOcasionComponent,
-     LaminaRiesgoModerado4TragosOcasionComponent,
-     M3Component,],
+     M3Component],
   providers: [AlmacenaConsumoService]
 })
 
