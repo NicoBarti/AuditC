@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HostBinding } from '@angular/core';
 
@@ -14,7 +14,7 @@ import {AlmacenaConsumoService} from '../../almacena-consumo.service'
   animations: [slideInDownAnimation]
 })
 
-export class P1Component {
+export class P1Component implements OnInit {
 
   @HostBinding('@routeAnimation') routeAnimation = true;
   @HostBinding('style.display')   display = 'block';
@@ -26,6 +26,10 @@ export class P1Component {
 
   opciones = OpcionesPreguntas.p1
   model: number;
+
+ngOnInit() {
+  // this.model = 'HOLA!'
+}
 
   enviar() {
     this.almacenaConsumoService.setP1(this.model)

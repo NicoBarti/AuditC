@@ -1,24 +1,55 @@
+
 <form (ngSubmit)="enviar()" class="form-control">
 
-  <div>
-    <label for="p1"><h4>¿Cuán frecuentemente toma 5 o más TRAGOS en un solo día?</h4></label>
-    <br>
-    <select class="form-control input-lg"
-            [(ngModel)]="model"
-            name="p1"
-            id="p1"
-            required
-            #p1="ngModel">
-      <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
-    </select>
 
+  <div class="card" >
+    <div class="card-header"><h4 class="">¿Cuán frecuentemente toma 5 o más TRAGOS ESTANDAR en un solo día?</h4>
+      <!-- <h6 class="text-muted">Por ejemplo cerveza, vino, piscola u otros tragos </h6> -->
+    </div>
+    <div class="card-body ">
+
+
+      <select  class="form-control input-lg "
+              [(ngModel)]="model"
+              name="p1"
+              id="p1"
+              required
+              #p1="ngModel"
+              placeholder="Nombre usuario"
+              >
+        <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
+      </select>
+      <br>
+          <ng-template #popContent> <app-t5cerveza></app-t5cerveza> </ng-template>
+          <button type="button" class="btn btn-outline-info  btn-block" placement="bottom"
+                  [ngbPopover]="popContent" popoverTitle="Ejemplo 5 o más de 5 tragos">
+            VER EJEMPLO
+          </button>
+      <br>
+      <h6><mark>Un TRAGO ESTANDAR es:</mark></h6>
+
+      <app-tragos-equivalentes></app-tragos-equivalentes>
+
+
+    </div>
   </div>
+
+  <!-- <div class="card" >
+    <div class="card-body">
+
+      <ng-template #popContent> <app-t5cerveza></app-t5cerveza> </ng-template>
+      <button type="button" class="btn btn-outline-info  btn-block" placement="top"
+              [ngbPopover]="popContent" popoverTitle="Ejemplo 5 tragos">
+        Ejemplo
+      </button>
+
+    </div>
+  </div> -->
+  <!-- <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button> -->
+
+
+
   <br>
-
-<app-t5cerveza></app-t5cerveza>
-<app-t5vaso-vino></app-t5vaso-vino>
-<app-t6piscola></app-t6piscola>
-
   <button type="submit" class="btn btn-success"
   [disabled]="p1.invalid">
     Siguiente</button>
