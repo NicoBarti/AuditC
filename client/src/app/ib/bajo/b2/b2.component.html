@@ -6,8 +6,11 @@
     <p class="card-text">Para mantener un consumo moderado, recuerde no sobrepasar dos tragos por ocasión</p>
     <app-lamina-bajo-riesgo2-tragos-ocasion></app-lamina-bajo-riesgo2-tragos-ocasion>
 
-    <button type="button" class="btn btn-info">Ver equivalencias de tragos</button>
-  </div>
+    <ng-template #popContent> <app-tragos-equivalentes></app-tragos-equivalentes> </ng-template>
+    <button type="button" class="btn btn-info" placement="bottom"
+            [ngbPopover]="popContent" popoverTitle="Ejemplo 5 o más de 5 tragos">
+      Ver equivalencias de tragos
+    </button>  </div>
 
 </div>
 
