@@ -24,13 +24,19 @@ export class P3Component implements OnInit {
 
   opciones = OpcionesPreguntas.p3
   model: number;
+  alerta: boolean;
 
   ngOnInit() {
+    this.alerta = false;
   }
 
   enviar() {
-    this.almacenaConsumoService.setP3(this.model);
-    this.router.navigate(['ib'])
+    if(this.model == 0 && this.almacenaConsumoService.getP2() > 1){
+          this.alerta= true}
+          else {
+            this.almacenaConsumoService.setP3(this.model);
+            this.router.navigate(['ib'])
+          }
 
     }
 

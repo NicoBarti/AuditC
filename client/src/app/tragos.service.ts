@@ -17,15 +17,15 @@ export class TragosService {
 
         let puntaje: number
       // Convierte tragos a puntaje
-                    if (tragos < 3)
+                    if (tragos == 1 || tragos == 2)
                         {puntaje = 0}
-                    else if (tragos < 5)
+                    else if (tragos == 3 || tragos == 4)
                         {puntaje = 1}
-                    else if (tragos < 7)
+                    else if (tragos == 5 || tragos == 6)
                         {puntaje = 2}
-                    else if (tragos < 10)
+                    else if (tragos == 7 || tragos == 8 || tragos == 9)
                         {puntaje = 3}
-                    else
+                    else if (tragos > 9)
                         {puntaje = 4}
 
                   console.log("puntaje =" + puntaje)
