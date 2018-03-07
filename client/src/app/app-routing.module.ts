@@ -29,7 +29,7 @@ const routes: Routes = [
    }
    // { path: 'b', component: BajoComponent },
    // { path: 'm', component: ModeradoComponent}
-   // { path: '**', component: PageNotFoundComponent }
+   { path: '**', redirectTo: '' }
  ];
 
 @NgModule({
