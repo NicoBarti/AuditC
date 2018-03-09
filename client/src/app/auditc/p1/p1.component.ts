@@ -6,6 +6,7 @@ import {OpcionesPreguntas} from '../opciones-preguntas'
 // import {SumaPuntajeService} from '../suma-puntaje.service'
 import {slideInDownAnimation} from '../../animaciones'
 import {AlmacenaConsumoService} from '../../almacena-consumo.service'
+// import {MatSelectModule, MatFormFieldModule} from '@angular/material'
 
 @Component({
   selector: 'app-p1',

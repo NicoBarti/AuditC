@@ -6,7 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap'
+import {MatSidenavModule} from '@angular/material/sidenav';
+// import {MaterialModule} from '@angular/material'
 // import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+// import { MatFormField} from '@angular/material'
+
 
 import { Angular2TokenService } from 'angular2-token';
 
@@ -45,14 +49,17 @@ import { InfoinicioComponent } from './auditc/infoinicio/infoinicio.component';
     HttpModule,
     BrowserModule,
     NgbModule.forRoot(),
+    // MaterialModule.forRoot(),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatSidenavModule,
     AuditcModule,
     IbModule,
     Audit3RoutingModule,
     BrowserAnimationsModule,
-    LaminasModule
+    LaminasModule,
+    // MatFormField
 
   ],
   providers: [Angular2TokenService,

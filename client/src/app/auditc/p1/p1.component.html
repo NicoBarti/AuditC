@@ -5,21 +5,22 @@
       <h6 class="text-muted">Por ejemplo cerveza, vino, piscola u otros tragos </h6>
     </div>
     <div class="card-body ">
-      <select  class="form-control form-control-lg"
 
-              [(ngModel)]="model"
-              name="p1"
-              id="p1"
-              required
-              #p1="ngModel">
-        <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
-      </select>
+      <mat-form-field>
+        <mat-select [(ngModel)]="model" name="p1" class="form-control form-control-lg"
+        placeholder = "SU RESPUESTA:" #p1="ngModel" required>
+          <mat-option *ngFor="let opcion of opciones" [value]="opcion.puntaje"> {{opcion.texto}} </mat-option>
+        </mat-select>
+      </mat-form-field>
 
     </div>
   </div>
 
   <br>
+  <!-- <button type="submit" class="btn btn-success"> Siguiente</button> -->
+
   <button type="submit" class="btn btn-success"
   [disabled]="p1.invalid"> Siguiente</button>
+
 
   </form>
