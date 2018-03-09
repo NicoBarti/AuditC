@@ -1,6 +1,7 @@
 import { NgModule }       from '@angular/core';
 import { CommonModule }   from '@angular/common';
 import { FormsModule }    from '@angular/forms';
+import {MatSelectModule, MatFormFieldModule} from '@angular/material'
 
 import { P1Component }  from './p1/p1.component'
 import { P2Component }  from './p2/p2.component'
@@ -21,7 +22,9 @@ import {LaminasModule} from '../laminas/laminas.module'
     FormsModule,
     AuditcRoutingModule,
     NgbModule,
-    LaminasModule
+    LaminasModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   declarations: [
      P1Component,
@@ -29,6 +32,8 @@ import {LaminasModule} from '../laminas/laminas.module'
      P3Component,
      AuditcComponent,
 
+  ],
+  exports: [
   ],
   providers: [
               AlmacenaConsumoService]

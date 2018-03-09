@@ -7,17 +7,13 @@
     </div>
     <div class="card-body ">
 
+      <mat-form-field>
+        <mat-select [(ngModel)]="model" name="p1" class="form-control form-control-lg"
+        placeholder = "SU RESPUESTA:" #p1="ngModel" required>
+          <mat-option *ngFor="let opcion of opciones" [value]="opcion.puntaje"> {{opcion.texto}} </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-      <select  class="form-control form-control-lg"
-              [(ngModel)]="model"
-              name="p1"
-              id="p1"
-              required
-              #p1="ngModel"
-              placeholder="Nombre usuario"
-              >
-        <option *ngFor="let opcion of opciones" value="{{opcion.puntaje}}">{{opcion.texto}}</option>
-      </select>
       <br>
           <ng-template #popContent> <app-t5cerveza></app-t5cerveza> </ng-template>
           <button type="button" class="btn btn-outline-info  btn-block" placement="bottom"
@@ -41,8 +37,7 @@
 
 
   <br>
-  <button type="submit" class="btn btn-success"
-  [disabled]="p1.invalid">
-    Siguiente</button>
+  <button type="submit" class="btn btn-success" [disabled]="p1.invalid"
+  >Siguiente</button>
 
   </form>
