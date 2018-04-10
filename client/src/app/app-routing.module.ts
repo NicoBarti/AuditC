@@ -26,7 +26,7 @@ const routes: Routes = [
      path: '',
      component: AuditcComponent,
      canActivate: [AuthGuard]
-   }
+   },
    // { path: 'b', component: BajoComponent },
    // { path: 'm', component: ModeradoComponent}
    { path: '**', redirectTo: '' }
