@@ -31,6 +31,7 @@ import { AlmacenaConsumoService} from './almacena-consumo.service'
 // import { HomeComponent } from './home/home.component'
 
 import { AuthGuard } from './auth-guard';
+import { AuthService } from './auth.service';
 
 import { NuComponent } from './nuevo-usuario-sesion/nu/nu.component';
 import { InfoinicioComponent } from './auditc/infoinicio/infoinicio.component';
@@ -65,7 +66,8 @@ import { InfoinicioComponent } from './auditc/infoinicio/infoinicio.component';
   providers: [Angular2TokenService,
               UsuarioService,
               TragosService,
-              AuthGuard],
+              AuthGuard,
+              AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
