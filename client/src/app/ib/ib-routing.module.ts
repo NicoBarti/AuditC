@@ -15,12 +15,13 @@ import { M3Component } from './moderado/m3/m3.component';
 
 import { IbComponent }  from './ib.component'
 
-import { AuthGuard } from '../auth-guard';
+// import { AuthGuard } from '../auth-guard';
+import { AuthGuardService } from '../auth-guard.service';
 
 
 const auditcRoutes: Routes = [
   {path: 'ib',
-  // canActivateChild: [AuthGuard],
+  canActivateChild: [AuthGuardService],
   component: IbComponent,
   children: [
     {path: 'b',

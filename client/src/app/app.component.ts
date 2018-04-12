@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { AuthService } from './auth.service'
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor(public auth: AuthService) {
+    auth.handleAuthentication();  }
+
 }

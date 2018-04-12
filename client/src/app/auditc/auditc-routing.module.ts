@@ -6,12 +6,13 @@ import { P2Component }  from './p2/p2.component'
 import { P3Component }  from './p3/p3.component'
 import { AuditcComponent } from './auditc.component'
 import { InfoinicioComponent } from './infoinicio/infoinicio.component'
-import { AuthGuard } from '../auth-guard';
+// import { AuthGuard } from '../auth-guard';
+import { AuthGuardService } from '../auth-guard.service';
 
 
 const auditcRoutes: Routes = [
   {path: 'auditc',
-  canActivateChild: [AuthGuard],
+  // canActivateChild: [AuthGuardService],
   component: AuditcComponent,
   children: [
     {path: 'p1', component: P1Component},

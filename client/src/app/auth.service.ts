@@ -12,8 +12,10 @@ export class AuthService {
     responseType: 'token id_token',
     audience: 'https://nicoauth.auth0.com/userinfo',
     redirectUri: 'http://localhost:4200/callback',
-    scope: 'openid'
+    scope: 'openid profile'
   });
+
+  userProfile: any;
 
   constructor(public router: Router) {}
 
@@ -26,10 +28,12 @@ export class AuthService {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         this.setSession(authResult);
-        this.router.navigate(['/home']);
+        console.log(authResult)
+        this.router.navigate(['/audit']);
       } else if (err) {
-        this.router.navigate(['/home']);
-        console.log(err);
+        console.log(err + 'desde handleAuthentication');
+        this.router.navigate(['/']);
+
       }
     });
   }
@@ -57,5 +61,21 @@ export class AuthService {
     const expiresAt = JSON.parse(localStorage.getItem('expires_at'));
     return new Date().getTime() < expiresAt;
   }
+
+  public getProfile(cb): void {
+    const accessToken = localStorage.getItem('access_token');
+    if (!accessToken) {
+      throw new Error('Access Token must exist to fetch profile');
+    }
+
+    const self = this;
+    this.auth0.client.userInfo(accessToken, (err, profile) => {
+      if (profile) {
+        self.userProfile = profile;
+      }
+      cb(err, profile);
+    });
+  }
+
 
 }
