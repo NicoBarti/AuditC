@@ -1,5 +1,18 @@
+// depurador de deploy:
+import * as Raven from 'raven-js';
+
+Raven
+  .config('https://aac14e84b600488aa8c75a05462be113@sentry.io/1188782')
+  .install();
+
+export class RavenErrorHandler implements ErrorHandler {
+  handleError(err:any) : void {
+    Raven.captureException(err);
+  }
+}
+
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
 import { FormsModule } from '@angular/forms';
@@ -47,11 +60,12 @@ import { ProfileComponent } from './profile/profile.component';
     BrowserAnimationsModule,
     LaminasModule,
   ],
-  providers: [
+  providers: [{ provide: ErrorHandler, useClass: RavenErrorHandler },
               UsuarioService,
               TragosService,
               AuthService,
-              AuthGuardService],
+              AuthGuardService,
+            ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
