@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -33,12 +33,12 @@
     "auth0-js": "^9.4.2",
     "autoprefixer": "^8.2.0",
     "bootstrap": "^4.1.0",
-    "codelyzer": "^4.0.2",
+    "codelyzer": "^4.2.1",
     "core-js": "^2.5.5",
     "rxjs": "^5.5.10",
     "tether": "^1.4.3",
     "ts-node": "~3.2.0",
-    "typescript": "^2.8.1",
+    "typescript": "^2.6.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
