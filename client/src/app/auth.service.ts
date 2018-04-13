@@ -11,7 +11,7 @@ export class AuthService {
     domain: 'nicoauth.auth0.com',
     responseType: 'token id_token',
     audience: 'https://nicoauth.auth0.com/userinfo',
-    redirectUri: 'http://localhost:4200/callback',
+    // redirectUri: 'http://localhost:4200/callback',
     scope: 'openid profile'
   });
 
