@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { NuevoUsuarioComponent } from './nuevo-usuario/nuevo-usuario.component';
-import { NuevoUsuarioSesionComponent } from './nuevo-usuario-sesion/nuevo-usuario-sesion.component';
-import { NuComponent } from './nuevo-usuario-sesion/nu/nu.component';
+// import { NuevoUsuarioSesionComponent } from './nuevo-usuario-sesion/nuevo-usuario-sesion.component';
+// import { NuComponent } from './nuevo-usuario-sesion/nu/nu.component';
 
 import { AuditcComponent } from './auditc/auditc.component';
 import { BajoComponent } from './ib/bajo/bajo.component';

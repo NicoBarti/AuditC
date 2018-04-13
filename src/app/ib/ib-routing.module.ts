@@ -21,7 +21,7 @@ import { AuthGuardService } from '../auth-guard.service';
 
 const auditcRoutes: Routes = [
   {path: 'ib',
-  canActivateChild: [AuthGuardService],
+  // canActivateChild: [AuthGuardService],
   component: IbComponent,
   children: [
     {path: 'b',

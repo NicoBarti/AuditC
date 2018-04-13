@@ -14,8 +14,6 @@ import { Audit3RoutingModule } from './app-routing.module';
 import { AuditcModule } from './auditc/auditc.module';
 import { IbModule } from './ib/ib.module';
 import { LaminasModule} from './laminas/laminas.module'
-import { NuevoUsuarioFormaComponent } from './nuevo-usuario-forma/nuevo-usuario-forma.component';
-import { NuevoUsuarioSesionComponent } from './nuevo-usuario-sesion/nuevo-usuario-sesion.component'
 import { UsuarioService } from './usuario.service';
 import { TragosService } from './tragos.service'
 import { AlmacenaConsumoService} from './almacena-consumo.service'
@@ -23,7 +21,6 @@ import { AlmacenaConsumoService} from './almacena-consumo.service'
 import { AuthService } from './auth.service';
 import { AuthGuardService } from './auth-guard.service';
 
-import { NuComponent } from './nuevo-usuario-sesion/nu/nu.component';
 import { InfoinicioComponent } from './auditc/infoinicio/infoinicio.component';
 import { CallbackComponent } from './callback/callback.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -32,9 +29,6 @@ import { ProfileComponent } from './profile/profile.component';
   declarations: [
     AppComponent,
     NuevoUsuarioComponent,
-    NuevoUsuarioFormaComponent,
-    NuevoUsuarioSesionComponent,
-    NuComponent,
     InfoinicioComponent,
     CallbackComponent,
     ProfileComponent,
