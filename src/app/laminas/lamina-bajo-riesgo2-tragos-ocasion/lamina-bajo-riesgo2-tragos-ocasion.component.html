@@ -1,0 +1,20 @@
+
+<div class="card border-light">
+  <h5>Por ejemplo:</h5>
+
+  <div class="card-group d-flex flex-row">
+
+    <div *ngFor="let imagen of imagen1" class="card border-light">
+      <div class="card-img-top">
+        <img class="img-fluid" src={{imagen}}>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card-footer" >
+    <div class="inline-block font-weight-bold ">
+      <img class="img-fluid" style="max-height: 2rem;" src={{imagen1[0]}}>= 1 trago
+    </div>
+  </div>
+</div>

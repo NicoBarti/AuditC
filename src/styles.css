@@ -1,0 +1,86 @@
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+//* Bootstrap en caso de que sea necesario */
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+
+/* You can add global styles to this file, and also import other style files */
+/*Encabezado*/
+
+.navbar{
+	background-color: #b3d9ff;
+	color: black;
+
+}
+
+body{
+	background-color: #e6fff9;
+}
+
+.navbar-brand {
+  height: auto;
+}
+
+.navbar-text {
+  font-size: 1,5em;
+  /*font-weight: bold;*/
+  margin-top: 10px;
+}
+
+.navbar-right {
+  font-size: 1em;
+  font-weight: lighter;
+  margin-right: 10px;
+}
+
+.navbar-brand img{
+	width: 60px;
+	height: 60px;
+}
+
+
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+  text-decoration: none;
+}
+
+.lead{
+	color: #ff4441;
+}
+
+
+
+
+
+/*Cuerpo*/
+
+.tragos img{
+	height: 200px;
+	margin: 5px;
+	text-align: center;
+}
+
+.form-group label{
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.bg-warning{
+	color: black;
+	font-weight: bolder;
+}
+
+
+
+
+/*Pie de página*/
+.panel-footer {
+	color: white;
+	background-color: black;
+}
+
+
+/*Cuestionario AUDIT*/

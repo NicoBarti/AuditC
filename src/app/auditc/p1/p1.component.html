@@ -1,0 +1,26 @@
+<form (ngSubmit)="enviar()" class="form-control">
+
+  <div class="card" >
+    <div class="card-header"><h4 class="">¿Con qué frecuencia consume alguna bebida alcoholica?</h4>
+      <h6 class="text-muted">Por ejemplo cerveza, vino, piscola u otros tragos </h6>
+    </div>
+    <div class="card-body ">
+
+      <mat-form-field>
+        <mat-select [(ngModel)]="model" name="p1" class="form-control form-control-lg"
+        placeholder = "SU RESPUESTA:" #p1="ngModel" required>
+          <mat-option *ngFor="let opcion of opciones" [value]="opcion.puntaje"> {{opcion.texto}} </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+  </div>
+
+  <br>
+  <!-- <button type="submit" class="btn btn-success"> Siguiente</button> -->
+
+  <button type="submit" class="btn btn-success"
+  [disabled]="p1.invalid"> Siguiente</button>
+
+
+  </form>

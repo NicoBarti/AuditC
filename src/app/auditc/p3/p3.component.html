@@ -1,0 +1,43 @@
+
+<form (ngSubmit)="enviar()" class="form-control">
+
+  <div class="card">
+    <div class="card-header"><h4 class="">¿Cuán frecuentemente toma 5 o más TRAGOS ESTANDAR en un solo día?</h4>
+      <!-- <h6 class="text-muted">Por ejemplo cerveza, vino, piscola u otros tragos </h6> -->
+    </div>
+    <div class="card-body ">
+
+      <mat-form-field>
+        <mat-select [(ngModel)]="model" name="p1" class="form-control form-control-lg"
+        placeholder = "SU RESPUESTA:" #p1="ngModel" required>
+          <mat-option *ngFor="let opcion of opciones" [value]="opcion.puntaje"> {{opcion.texto}} </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <br>
+          <ng-template #popContent> <app-t5cerveza></app-t5cerveza> </ng-template>
+          <button type="button" class="btn btn-outline-info  btn-block" placement="bottom"
+                  [ngbPopover]="popContent" popoverTitle="Ejemplo 5 o más de 5 tragos" container="body">
+            VER EJEMPLO
+          </button>
+      <br>
+      <h6><mark>Un TRAGO ESTANDAR es:</mark></h6>
+
+      <app-tragos-equivalentes></app-tragos-equivalentes>
+
+
+    </div>
+  </div>
+
+  <p *ngIf="alerta">
+    <ngb-alert [dismissible]="false">
+      <strong>Revise </strong> En la pregunta anterior usted dijo consumir más de 4 tragos en una ocasión típica
+    </ngb-alert>
+  </p>
+
+
+  <br>
+  <button type="submit" class="btn btn-success" [disabled]="p1.invalid"
+  >Siguiente</button>
+
+  </form>
